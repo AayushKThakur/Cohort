@@ -1,3 +1,4 @@
+// CPU BOUND TASK
 function sum(a,b){
     return a + b;
 }
@@ -16,9 +17,15 @@ const answ = summ(10);
 const { log } = require("console");
 // console.log(answ);
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//INPUT/OUTPUT (I/0) BOUND TASK
+
 const fs = require("fs"); //importing an external library "fs"
 // console.log(fs);
 
 const data = fs.readFileSync('./a.txt', 'utf-8'); //calls fs.readfile synchronously
 console.log(data); //logs the data over here
 
+const info = fs.readFileSync('./b.txt', 'utf-8');
+console.log(info);
