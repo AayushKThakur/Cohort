@@ -1,3 +1,7 @@
+// Object from a Class:
+
+// Created using a class as a blueprint with the new keyword.
+// Can have predefined properties and methods defined in the class.
 class Rectangle {
     constructor(width, height, color) { //properties
         this.width = width;
@@ -15,7 +19,7 @@ class Rectangle {
         
     }
 }
-
+//whenever you want to create an object of a class, you have to use the "new" keyword
 const rect = new Rectangle(2, 4, "Red");    //object of class rectangle
 const rect2 = new Rectangle(10, 20, "Blue");//object of class rectangle
 
