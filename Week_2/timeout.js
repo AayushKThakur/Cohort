@@ -3,7 +3,7 @@ function timeout(){
 }
 console.log("Hi!");
 
-setTimeout(timeout, 1000);           // I/O INTENSIVE TASK
+setTimeout(timeout, 1000);//callback    // I/O INTENSIVE TASK
 
 console.log("Welcome to loupe.");
 
