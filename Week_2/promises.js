@@ -2,7 +2,7 @@
 //the "eventual completion"(or failure) of an 
 //asynchronous operation and its resulting value.
 
-//Promises are just a syntactically superior way to wrtie instead of a callbacks.(layman terms)
+//Promises are just a syntactically superior way to write instead of a callbacks.(layman terms)
 //Callbacks: "I'll call you back when I'm done." (But things can get chaotic if there's too much back-and-forth.)
 // Promises: "I promise to tell you when I'm done, or if there's a problem." (And you can handle things in a nice sequence.)
 //Promises simplify and organize asynchronous tasks!
