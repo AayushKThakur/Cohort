@@ -27,20 +27,87 @@
 //     console.log("3 seconds have passed");
 // }
 
-
 // setTimeoutPromisified(3000).then(callback); //promisified version
 //syntactically cleaner version of: setTimeout(3000,callback) //callback version
 
-function random(resolve) { //resolve is also a function
+///////////////////////////////////////////////////////////////////////////////////////////////
 
-}
+// function random(resolve) { //resolve is also a function
 
-let p = new Promise(random); // a promise  is supposed to return you something...eventually
+// }
+
+// let p = new Promise(random); // a promise  is supposed to return you something...eventually
 
 
 //using the eventual value returned by the promise
-function callback() {
-    console.log("promise succeded"); 
-}
-p.then(callback); //whenever the promise eventually completes, yaha control bhej dena
+// function callback() {
+//     console.log("promise succeded"); 
+// }
+// p.then(callback); //whenever the promise eventually completes, yaha control bhej dena
 //please call this once you eventually complete
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// const { log } = require("console");
+// const fs = require("fs")
+
+// console.log("----top of the file----");
+
+// function readTheFile(resolve) {
+//     console.log("readTheFile called");
+//     setTimeout(function(){
+//         console.log("callback based setTimeout completed");
+//         resolve();
+//     }, 3000);
+// }
+
+// function setTimeoutPromisified(fileName) {
+//     console.log("setTimeoutPromisifies called");
+//     //read the file and return its value
+//     return new Promise(readTheFile);
+// }
+
+// const p = setTimeoutPromisified();
+
+// function callback() {
+//     console.log("timer is done");
+// }
+
+// p.then(callback)
+
+// console.log("----end of the file----");
+
+////////////////////////////////////////////////////////////////
+
+//writing our own promise class
+// class Promise2 {
+//     constructor (fn) {
+//         function afterDone() {
+//             this.resolve();
+//         }
+//         fn(afterDone)
+//     }
+//     then(callback) {
+//         this.resolve = callback;
+//         //thid.width = 3
+//         //this.color = "red";
+//     }
+// }
+
+// function readTheFile(resolve) {
+//     setTimeout(function() {
+//         console.log("callback nased setTimeout completed");
+//         resolve();
+//     }, 3000);
+// }
+
+// function setTimeoutPromisified() {
+//     return new Promise2(readTheFile)
+// }
+
+// let p = setTimeoutPromisified();
+// function callback() {
+//     console.log("callback has been called");
+// }
+// p.then(callback);
+
