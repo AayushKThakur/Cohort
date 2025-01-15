@@ -1,0 +1,28 @@
+ Terminal in nothing but another interface to do things on your machine, using the graphical user interface(GUI).
+ 
+ 1. "pwd":- print working directory - shows the current folder
+
+ 2. "cd":- change directoy - eg, cd Desktop, takes you to dekstop folder
+    "cd.." :- takes you one folder back. "cd ../..":-takes you 2 folder back
+
+ 3. "ls":- list of all files in the current folder
+ 
+ 4. "mkdir":- make directory
+
+ 5. "touch":- make a new file
+
+ 6. "cat":- shows the contents of a file, eg, cat a.txt
+
+ 7. "vi":- edit content. "i" insert mode to type.esc ":q!" to exit out of file without saving.
+     "wq!":- to save and exit
+
+ 8. "mv":- move file. mv a2.txt new-folder
+            mv new-folder test2
+            mv test test2/new-folder
+
+9. "cp":- cp a3.js test2
+            cp -r test2 test2 : copying folers, -r used
+
+10. "node":- run a js file. or even edit one, exit out by ctrl+c.
+
+11. "npm":- node package manager, npm install and a name of a dependency to install, like express.

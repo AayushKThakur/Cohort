@@ -12,7 +12,6 @@ function setTimeoutPromisified(){
 
 function main() {
     console.log("main is called");
-    
 }
 
 setTimeoutPromisified().then(main); //promise based approach
