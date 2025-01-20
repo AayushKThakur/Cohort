@@ -1,19 +1,56 @@
-<html>
-    <body>
-        <input type="text"></input>
-        <button onclick="addTodo()">Add todo!</button>
-    </body>
-    <script>
-        function addTodo(){
-            const inputEl = document.querySelector("input");
-            const value = inputEl.value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Application</title>
+</head>
+<body>
+    <h1>Todo Application!</h1>
+    <div id="todos">
+        <div>
+            <h4 id = "todo-1"> 1.Go to gym </h4>
+            <button onclick="deleteTodo(1)">Delete</button>
+        </div>
+        <div>
+            <h4 id = "todo-2"> 2.Have breakfast </h4> 
+            <button onclick="deleteTodo(2)">Delete</button>
+        </div>
+        
+    </div>
+    <div>
+        <input  type="text" id="inp" placeholder="Enter your task" >
+        <button onclick="addTodo()">Add!</button>
+    </div>
 
-            const newDivEl=document.createElement("div");
-            // newDivEl.innerHTML = value; //adding just a simple string
-            new//string concatenation to pass more than a string
-            
+</body>
 
-            document.querySelector("body").appendChild(newDivEl)
-        }
-    </script>
+<script>
+    let IndexCounter = 3;
+    
+    function addTodo(){
+        const InputVal = document.getElementById("inp");
+        const value = InputVal.value;
+        const NextNode = document.createElement("div");
+//      <div id='todo-3'>
+//      <h4>3. Todo 3</h4>
+//      <button onclick='deleteTodo(3)'>Delete</button>
+//      </div>
+
+        // NextNode.innerHTML =  "<div id = 'todo-" + IndexCounter + "'> <h4>" + IndexCounter + ". " + InputVal.value + "</h4><button onclick='deleteTodo(" + IndexCounter + ")'>Delete</button></div>";
+        NextNode.innerHTML = `<div id = 'todo-${IndexCounter}'> <h4> ${IndexCounter}. ${InputVal.value} </h4> <button onclick='deleteTodo(${IndexCounter})'>Delete</button> `
+        const parent = document.getElementById("todos");
+        parent.appendChild(NextNode);
+        IndexCounter = IndexCounter + 1;
+    }
+
+    function deleteTodo(Index){
+        const element = document.getElementById("todo-"+Index);
+        element.parentNode.removeChild(element);
+
+    }
+
+</script>
+
+
 </html>
