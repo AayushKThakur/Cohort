@@ -1,17 +1,16 @@
-// Assigment 1
-function sum(a, b){
-    return a+b;
+// Assigment 1: Return a function to add two numbers.
+function sum(a, b) {
+  return a + b;
 }
-let ans = sum("Aayush","Thakur");
+let ans = sum("Aayush", "Thakur");
 console.log(ans);
 
-// Assignment 2
-function canVote(age){
-    if (age>18) {
-        return true;
-    } 
-    return false;
+// Assignment 2: write a function to check voting eligibility
+function canVote(age) {
+  if (age > 18) {
+    return true;
+  }
+  return false;
 }
-let vote= canVote(17)
+let vote = canVote(17);
 console.log(vote);
-
