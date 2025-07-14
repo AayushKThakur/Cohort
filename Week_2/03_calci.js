@@ -1,4 +1,7 @@
+
 //FUNCTIONAL ARGUMENTS: Passing a function to another function as an argument.
+
+const { log } = require("console");
 
 // Write a calculator program that adds, subtracts, multiplies, divides two arguments.
 // Approach #1
@@ -43,15 +46,17 @@ function divide(a, b) {
   return a / b;
 }
 
-function doOperation(a, b, op) { //op arugument, gets replaced by this; function op(a,b){ return a + b } 
-//   return op(a, b)
-    //a=1
-    //b=2
-    let val = op(a,b); //sum(1,2)
-    return val;
+function doOperation(a, b, op) { 
+// op is a parameter of type function (a functional parameter)., e.g., sum, subtract, etc.
+let val = op(a, b); // This will call the argument passed for op with a and b.
+return val;
 }
 
-console.log(doOperation(1, 2, sum)) 
-// not calling the function like sum(1,2) because that will return 3. we need to call the name of the function signature and not what the function returns.  
+const ans = doOperation(1, 2, sum);
+// sum is a function being passed as an argument (a functional argument).
+console.log(ans);
+
+// not calling the function like sum(1,2) because that will return 3. 
+// we need to call the name of the function signature and not what the function returns.  
 
  
