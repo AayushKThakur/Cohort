@@ -4,7 +4,7 @@ function setTimeoutPromisified(duration){
     });
 }
 
-//Syntactic sugar
+//async await is Syntactic sugar, used to portray, async code as synchronous, under the hood it uses promises
 async function solve(){
     await setTimeoutPromisified(1000);
     console.log("hi");
