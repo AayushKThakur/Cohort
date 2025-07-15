@@ -1,4 +1,4 @@
-const { log } = require("console");
+// const { log } = require("console");
 
 const d = new Date(); //created a new object of the JS built in Date class
 
