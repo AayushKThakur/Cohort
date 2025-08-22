@@ -5,7 +5,7 @@ app.use(express.json());
 
 const users = [];
 
-//shoudl return a random long string
+//should return a random long string
 function generateToken() {
   let options = [
     "a",
@@ -123,7 +123,7 @@ app.post("/signin", function (req, res) {
     });
   } else {
     res.status(403).send({
-      message: "Inavalid username or password",
+      message: "Invalid username or password",
     });
   }
 
@@ -136,6 +136,28 @@ app.post("/signin", function (req, res) {
   //       false;
   //     }
   //   });
+});
+
+//Creating an authenticated endpoint
+app.get("/me", function (req, res) {
+  const token = req.headers.token;
+  let foundUser = null;
+
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].token == token) {
+      foundUser = users[i];
+    }
+  }
+  if (foundUser) {
+    res.json({
+      username: foundUser.username,
+      password: foundUser.password,
+    });
+  } else {
+    res.json({
+      message: "token invalid",
+    });
+  }
 });
 
 app.listen(3000);
