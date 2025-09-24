@@ -1,7 +1,7 @@
 const express = require("express");
 
 const app = express();
-app.use(express.json());
+app.use(express.json()); //middleware, will help you parse and post body, when done req.body
 
 const users = [];
 
@@ -109,6 +109,7 @@ app.post("/signin", function (req, res) {
   const password = req.body.password;
 
   let foundUser = null; //instance of the user ; the in memory for the user
+
   for (let i = 0; i < users.length; i++) {
     if (users[i].username == username && users[i].password == password) {
       foundUser = users[i];
@@ -129,6 +130,7 @@ app.post("/signin", function (req, res) {
 
   console.log(users);
 
+  //To check username and password of the user signing in
   //   const user = user.find(function (u) {
   //     if ((u, username == username && u.password == password)) {
   //       return true;
@@ -138,9 +140,25 @@ app.post("/signin", function (req, res) {
   //   });
 });
 
-//Creating an authenticated endpoint
+//Creating an authenticated endpoint:
+//a request that only is accessible once the user is authenticated
 app.get("/me", function (req, res) {
   const token = req.headers.token;
+
+  //a stateful way of storing session data.
+  //stateful: hitting the db everytime
+
+  // const user = users.find((user) => user.token === token); //hitting a database here
+  // if (user) {
+  //   res.send({
+  //     username: user.username,
+  //   });
+  // } else {
+  //   res.status(401).send({
+  //     message: "Unauthorized",
+  //   });
+  // }
+
   let foundUser = null;
 
   for (let i = 0; i < users.length; i++) {
