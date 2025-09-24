@@ -13,6 +13,12 @@ function logger(req, res, next) {
   next();
 }
 
+// hosting our frontend in our backend only.
+// localhost:3000, to avoid complexity of CORS
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + "/public/index.html"); //dirname holds current directory
+});
+
 app.post("/signup", logger, function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
@@ -61,7 +67,7 @@ app.post("/signin", logger, function (req, res) {
   } else {
     const token = jwt.sign(
       {
-        username,
+        username: foundUser.username,
       },
       JWT_SECRET
     );
