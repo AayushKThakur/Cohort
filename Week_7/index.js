@@ -5,9 +5,9 @@ const { auth, JWT_SECRET } = require("./auth");
 const jwt = require("jsonwebtoken");
 const { default: mongoose } = require("mongoose");
 
-mongoose.connect(
-  "mongodb+srv://akt_01:e8Mzm4skbkNWzs4C@cluster0.wczsrtx.mongodb.net/Todo"
-);
+// mongoose.connect(
+//   "mongodb+srv://akt_01:e8Mzm4skbkNWzs4C@cluster0.wczsrtx.mongodb.net/Todo"
+// );
 
 const app = express();
 app.use(express.json()); //middleware to prase json body

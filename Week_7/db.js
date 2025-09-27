@@ -1,6 +1,9 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.ObjectId;
+require("dotenv").config();
+
+mongoose.connect(process.env.MONGO_URI);
 
 //schema is what i want the data to look like
 const User = new Schema({
