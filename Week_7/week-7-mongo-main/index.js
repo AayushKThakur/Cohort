@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const { z } = require("zod");
 
 mongoose.connect(
-  "mongodb+srv://akt_01:e8Mzm4skbkNWzs4C@cluster0.wczsrtx.mongodb.net/Todo"
+  ""
 );
 
 const app = express();
