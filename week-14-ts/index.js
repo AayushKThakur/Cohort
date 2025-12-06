@@ -10,6 +10,7 @@ function sum(a, b) {
 }
 let ans = sum(1, 2);
 console.log(ans);
+// ans ="asdasd"
 function isLegal(age) {
     if (age > 18) {
         return true;
@@ -19,5 +20,11 @@ function isLegal(age) {
     }
 }
 console.log(isLegal(8));
+function delayedCall(fn) {
+    setTimeout(fn, 1000);
+}
+delayedCall(function () {
+    console.log("hello");
+});
 // greet(1);
 //# sourceMappingURL=index.js.map
